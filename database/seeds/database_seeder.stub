@@ -1,4 +1,4 @@
-INSERT INTO `rulong_areas` (`id`, `sn`, `psn`, `province`, `city`, `area`, `name`, `shortname`, `type`, `cnname`, `enname`, `info`, `shortinfo`, `zone`, `zip`, `lng`, `lat`, `depth`) VALUES
+INSERT INTO `aslong_areas` (`id`, `sn`, `psn`, `province`, `city`, `area`, `name`, `shortname`, `type`, `cnname`, `enname`, `info`, `shortinfo`, `zone`, `zip`, `lng`, `lat`, `depth`) VALUES
 (1, 110000, 0, '北京市', '', '', '北京市', '北京', '省级', 'bei,jing,shi', 'Beijing', '北京市', '北京', 0, 0, '116.4073940', '39.9042110', 1),
 (2, 110100, 110000, '北京市', '北京市', '', '北京市', '北京', '地级', 'bei,jing,shi', 'Beijing', '北京市,北京市', '北京,北京', 0, 0, '116.4073940', '39.9042110', 2),
 (3, 110101, 110100, '北京市', '北京市', '东城区', '东城区', '东城', '县级', 'dong,cheng,qu', 'Dongcheng', '北京市,北京市,东城区', '北京,北京,东城', 10, 100010, '116.4164900', '39.9283410', 3),

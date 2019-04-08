@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRulongAreasTable extends Migration
+class CreateAslongAreasTable extends Migration
 {
 
     /**
@@ -14,7 +14,7 @@ class CreateRulongAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('rulong_areas', function (Blueprint $table) {
+        Schema::create('aslong_areas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('sn')->unsigned();
             $table->integer('psn')->unsigned();
@@ -43,7 +43,7 @@ class CreateRulongAreasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('rulong_areas');
+        Schema::drop('aslong_areas');
     }
 
 }

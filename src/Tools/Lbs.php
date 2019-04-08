@@ -8,33 +8,28 @@ namespace AsLong\Area\Tools;
 class Lbs
 {
     /**
-     * 距离两点计算
-     * @param $from_lat, $from_lon, [起点经纬度]
-     * @param $to_lat,$to_lon [终点经纬度]
-     * @param $radius [可选，默认为地球的半径]
-     * @return float [返回两地距离，单位千米]
+     * 两坐标点间距离计算
+     * @Author:<C.Jason>
+     * @Date:2019-04-08T13:07:26+0800
+     * @param float $from_lat [起点纬度]
+     * @param float $from_lng [起点经度]
+     * @param float $to_lat [终点纬度]
+     * @param float $to_lng [终点经度]
+     * @return float 距离（米）
      */
-    public function getDistance($from_lat, $from_lon, $to_lat, $to_lon)
+    public function getDistance($from_lat, $from_lng, $to_lat, $to_lng)
     {
-        $radius = 6378.137;
-        $rad    = floatval(M_PI / 180.0);
+        $from_lat_rad = DEG2RAD($from_lat);
+        $from_lng_rad = DEG2RAD($from_lng);
+        $to_lat_rad   = DEG2RAD($to_lat);
+        $to_lng_rad   = DEG2RAD($to_lng);
 
-        $from_lat = floatval($from_lat) * $rad;
-        $from_lon = floatval($from_lon) * $rad;
-        $to_lat   = floatval($to_lat) * $rad;
-        $to_lon   = floatval($to_lon) * $rad;
+        $lat = ABS($from_lat_rad - $to_lat_rad);
+        $lng = ABS($from_lng_rad - $to_lng_rad);
 
-        $theta = $to_lon - $from_lon;
+        $distance = 6378.137 * 2 * ASIN(SQRT(POW(SIN($lat / 2), 2) + COS($from_lat_rad) * COS($to_lat_rad) * POW(SIN($lng / 2), 2)));
 
-        $dist = acos(sin($from_lat) * sin($to_lat) +
-            cos($from_lat) * cos($to_lat) * cos($theta)
-        );
-
-        if ($dist < 0) {
-            $dist += M_PI;
-        }
-
-        return $dist = $dist * $radius; //返回千米
+        return round($distance * 1000, 2);
     }
 
 }

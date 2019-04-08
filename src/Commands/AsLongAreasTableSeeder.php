@@ -1,6 +1,6 @@
 <?php
 
-namespace AsLong\Area;
+namespace AsLong\Area\Commands;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +14,7 @@ class AsLongAreasTableSeeder extends Seeder
      */
     public function run()
     {
-        $SQL = file_get_contents(__DIR__ . '/../database/seeds/database_seeder.stub');
+        $SQL = file_get_contents(__DIR__ . '/../../database/seeds/database_seeder.stub');
         DB::statement($SQL);
     }
 }

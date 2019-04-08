@@ -8,7 +8,7 @@ class ServiceProvider extends LaravelServiceProvider
 {
 
     protected $commands = [
-        Command::class,
+        Commands\Command::class,
     ];
 
     /**

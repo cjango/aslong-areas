@@ -1,6 +1,6 @@
 <?php
 
-namespace AsLong\Area;
+namespace AsLong\Area\Commands;
 
 use Illuminate\Console\Command as LaravelCommand;
 
